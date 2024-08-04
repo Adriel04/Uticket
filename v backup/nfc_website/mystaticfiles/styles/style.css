@@ -1,0 +1,309 @@
+/*Global*/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    user-select: none;
+}
+
+body{
+    background-color: #F2F2F2;
+}
+
+/* nav */
+nav{
+    position: sticky;
+    top: 0%;
+    height: auto;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    color: black;
+}
+
+nav a b{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+nav ul{
+    margin: 0% 25%;
+    justify-content: center;
+}
+
+nav li{
+    display: inline-flex;
+    padding: 1.5rem 1rem;
+    font-weight: bold;
+}
+
+.logged{
+    width: fit-content;
+    margin-right: 1rem;
+}
+
+/* Main page*/
+
+main {
+    display: flex;
+    height: 60rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainPageText{
+    width: 45%;
+    font-size: 3rem;
+    margin: 5%;
+}
+
+#mainPageText #tickets{
+    font-size: 2rem;
+    font-weight: lighter;
+    color: #4C5EFF;
+    margin-bottom: 5%;
+}
+
+#welcome{
+    margin-bottom: 10%;
+}
+
+.button h3{
+    background-color: #4C5EFF;
+    width: fit-content;
+    padding: 1% 2%;
+    border-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    font-weight: lighter;
+    transition: 0.2s;
+}
+
+.button h3:hover{
+    color: #4C5EFF;
+    background-color: #E9E9E9;
+}
+
+.button a{
+    background-color: #4C5EFF;
+    padding: 1% 2%;
+    border-radius: 15px;
+    color: white;
+    font-size: 2rem;
+    font-weight: lighter;
+    transition: 0.2s;
+}
+
+.button a:hover{
+    color: #4C5EFF;
+    background-color: #E9E9E9;
+}
+
+#boxCheckBalance{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8%;
+}
+
+#image{
+    display: flex;
+    justify-content: center;
+    width: 28%;
+}
+
+/*log form*/
+
+.formFill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 70%;
+    background-color: #FFF;
+    border-radius: 30px 0 0 30px;
+}
+
+.formFill h1{
+    justify-content: flex-start;
+    font-size: 2.5rem;
+    margin-bottom: 10%;
+}
+
+.formFill form label, #id_username, #id_password{
+    display: block;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 1rem;
+}
+
+.formFill div{
+    width: 70%;
+}
+
+.formFill .buttonMod{
+    display: flex;
+    justify-content: center;
+    padding: 2% 40%;
+    width: fit-content;
+    border-radius: 30px;
+    border-style: none;
+    background-color: #4C5EFF;
+    color: white;
+    font-size: 1rem;
+    margin: 0 2% 5% 2%;
+}
+
+.formText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    height: 70%;
+    background-color: #4C5EFF;
+    color: #FFF;
+    border-radius: 0 30px 30px 0;
+}
+
+.formText h2{
+    margin-bottom: 10%;
+    font-size: 2.5rem;
+}
+
+.formText p{
+    font-size: 1.5rem;
+    margin-bottom: 20%;
+    font-weight: lighter;
+}
+
+.formText p b{
+    font-weight: 500;
+}
+
+.formText a b{
+    background-color: #FFF;
+    padding: 2% 5%;
+    border-radius: 20px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #4C5EFF;
+}
+
+.innerForm p{
+    color: #C1C1C1;
+    font-weight: lighter;
+}
+
+.messageBelow{
+    display: flex;
+    color: #C1C1C1;
+    font-weight: lighter;
+    font-size: .8rem;
+    justify-content: center;
+}
+
+/* form style id */
+
+#id_username, #id_email, #id_password, #id_password1, #id_password2{
+    width: 140%;
+    height: 20%;
+    border-style: none none solid none;
+    border-color: #4C5EFF;
+    margin-top: 10% 0 0 0;
+    outline: none;
+    font-size: 1.5rem;
+}
+
+#id_password{
+    margin-bottom: 20%;
+}
+
+#id_password2{
+    margin-bottom: 5%;
+}
+
+/* panel */
+
+#mainBox{
+    display: flex;
+    background-color: #FFF;
+    height: 30%;
+    width: 30%;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+#figurativeBox{
+    width: 80%;
+    height: 100%;
+    align-content: center;
+}
+
+#title{
+    font-size: 1.5rem;
+    margin-bottom: 5%;
+}
+
+#balanceBox{
+    display: flex;
+    height: 40%;
+    border: solid #F2F2F2;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#dataView{
+    margin-right: 17%;
+}
+
+#getMore{
+    background-color:#4C5EFF;
+    border-radius: 20px;
+    width: 30%;
+    height: 40%;
+    margin-left: 17%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #FFF;
+    transition: 0.3s;
+}
+
+#getMore:hover{
+    background-color: #F2F2f2;
+    color: #4C5EFF;
+}
+
+/* rechargeBox */
+
+/* footer */
+footer{
+    position: absolute;
+    bottom: 0%;
+    height: auto;
+    width: 100%;
+    background-color: #4C5EFF;
+    display: inline-flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+footer li {
+    align-items: center;
+    display: inline-flex;
+    padding: 1rem 3rem;
+}
+
+footer li a{
+    color: white;
+}
