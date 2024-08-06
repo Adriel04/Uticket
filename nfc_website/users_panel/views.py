@@ -8,6 +8,7 @@ from .models import User, nfc_Info
 #for ESP purposes
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 #auth
 
@@ -91,7 +92,7 @@ def get_credit(request, uid_card):
 def update_credit(request):
     if request.method == 'POST':
         try:
-            data: = json.loads(request.body)
+            data = json.loads(request.body)
             uid_card = data.get('uid_card')
             new_credit = data.get('credit')
 
