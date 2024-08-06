@@ -5,6 +5,10 @@ from django.contrib import messages
 from django import forms
 from .models import User, nfc_Info
 
+#for ESP purposes
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
 #auth
 
 from django.contrib.auth.forms import UserCreationForm
@@ -73,3 +77,34 @@ class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
+
+
+@csrf_exempt
+def get_credit(request, uid_card):
+    try:
+        nfc_info = nfc_Info.objects.get(uid_card=uid_card)
+        return JsonResponse({'credit': nfc_info.credit})
+    except nfc_Info.DoesNotExist:
+        return JsonResponse({'error': 'card not found'}, status=404)
+    
+@csrf_exempt
+def update_credit(request):
+    if request.method == 'POST':
+        try:
+            data: = json.loads(request.body)
+            uid_card = data.get('uid_card')
+            new_credit = data.get('credit')
+
+            nfc_info = nfc_Info.objects.get(uid_card=uid_card)
+            nfc_info.credit = new_credit
+            nfc_info.save()
+
+            return JsonResponse({'status': 'success'})
+        except nfc_Info.DoesNotExist:
+            return JsonResponse({'error': 'Card not found'}, status=404)
+        except KeyError:
+            return JsonResponse({'error': 'invalid data'}, status=400)
+    return JsonResponse({'status': 'error'}, status=400)
+
+
+
