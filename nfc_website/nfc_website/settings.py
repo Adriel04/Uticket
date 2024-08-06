@@ -23,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z)b3f9+m3xu04xnzpwlb9xj*3ft_qx4tc+5p$3gs&(yoj2@05)'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ["tickettest.onrender.com"]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOST").split(" ")
 
 
 # Application definition
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'nfc_website.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+database_url = os.environ.get("DATABASE_URL")
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://adriel:3GRzzxjspkFuqD3jE1smnTcduZCRIOXT@dpg-cq9kuk3v2p9s73ckd33g-a.virginia-postgres.render.com/nfc_transportation_database',
+        default= database_url,
         conn_max_age=600
     )
 }
