@@ -33,6 +33,9 @@ def user_panel (request, user_id):
     
     return render(request, 'panel.html', {'user_id': user_id, 'credit': total_credit, 'history':nfc_infos})
 
+def aboutUs (request):
+    return render(request, 'about.html')
+
 
 # recharge function
 @login_required

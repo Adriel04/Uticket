@@ -7,6 +7,7 @@ urlpatterns = [
     path("<int:user_id>/", views.user_panel, name="panel"),
     path("<int:user_id>/recharge/", views.recharge, name="recharge"),
     path("signup/", SignUpView.as_view(), name="signup"),
+    path("about/", views.aboutUs, name='about'),
     path('api/get-credit/<str:uid_card>/', views.get_credit, name='get_credit'),
     path('api/update-credit/', views.update_credit, name='update_credit'),
 ]
